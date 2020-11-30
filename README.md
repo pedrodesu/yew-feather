@@ -1,7 +1,7 @@
 ## yew-feather
 
-[![crates.io version](https://img.shields.io/crates/v/yew-feather.svg?style=flat-square)](https://www.npmjs.com/package/react-feather)
-[![crates.io downloads](https://img.shields.io/crates/d/yew-feather.svg?style=flat-square)](https://www.npmjs.com/package/react-feather)
+[![crates.io version](https://img.shields.io/crates/v/yew-feather.svg?style=flat-square)](https://crates.io/crates/yew-feather)
+[![crates.io downloads](https://img.shields.io/crates/d/yew-feather.svg?style=flat-square)](https://crates.io/crates/yew-feather)
 
 #### What is yew-feather?
 
