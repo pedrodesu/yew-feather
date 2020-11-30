@@ -1,0 +1,20 @@
+[package]
+name = "yew-feather"
+version = "0.1.0"
+authors = ["Pedro Ferreira <me.pedro.ferreira@gmail.com>"]
+edition = "2018"
+categories = ["wasm", "web-programming"]
+keywords = ["wasm", "yew", "feather"]
+description = "Yew components for Feather icons"
+license = "MIT"
+readme = "./README.md"
+repository = "https://github.com/pedrodesu/yew-feather.git"
+homepage = "https://github.com/pedrodesu/yew-feather"
+documentation = "https://github.com/pedrodesu/yew-feather"
+include = [
+    "src/*",
+    "Cargo.toml"
+]
+
+[dependencies]
+yew = "0.17.4"
