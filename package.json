@@ -1,6 +1,6 @@
 {
     "name": "yew-feather",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Yew components for Feather icons",
     "main": "bin/build.js",
     "repository": {
