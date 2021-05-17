@@ -17,4 +17,4 @@ include = [
 ]
 
 [dependencies]
-yew = "0.17.4"
+yew = "0.18.0"
