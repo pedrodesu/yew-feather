@@ -49,12 +49,12 @@ impl Component for [name]
         html! {
             <svg
                 class=self.props.class.unwrap_or("")
-                width=self.props.size.unwrap_or(24)
-                height=self.props.size.unwrap_or(24)
+                width=self.props.size.unwrap_or(24).to_string()
+                height=self.props.size.unwrap_or(24).to_string()
                 viewBox="0 0 24 24"
                 fill=self.props.fill.unwrap_or("none")
                 stroke=self.props.color.unwrap_or("currentColor")
-                stroke-width=self.props.stroke_width.unwrap_or(2)
+                stroke-width=self.props.stroke_width.unwrap_or(2).to_string()
                 stroke-linecap=self.props.stroke_linecap.unwrap_or("round")
                 stroke-linejoin=self.props.stroke_linejoin.unwrap_or("round")
             >
