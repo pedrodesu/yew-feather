@@ -1,6 +1,6 @@
 [package]
 name = "yew-feather"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Pedro Ferreira <me.pedro.ferreira@gmail.com>"]
 edition = "2018"
 categories = ["wasm", "web-programming"]
@@ -11,10 +11,7 @@ readme = "./README.md"
 repository = "https://github.com/pedrodesu/yew-feather.git"
 homepage = "https://github.com/pedrodesu/yew-feather"
 documentation = "https://github.com/pedrodesu/yew-feather"
-include = [
-    "src/*",
-    "Cargo.toml"
-]
+include = ["/src/"]
 
 [dependencies]
 yew = "0.18.0"
