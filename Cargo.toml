@@ -14,4 +14,4 @@ documentation = "https://github.com/pedrodesu/yew-feather"
 include = ["/src/"]
 
 [dependencies]
-yew = "0.18.0"
+yew = { git = "https://github.com/yewstack/yew" }
