@@ -7,7 +7,7 @@ fn main() -> Result<()>
     println!("cargo:rerun-if-changed=bin/");
     println!("cargo:rerun-if-changed=package-lock.json");
     Command::new("npm")
-        .args(["ci", "--ignore-scripts", "--audit=false"])
+        .args(["ci", "--audit=false"])
         .status()?
         .success()
         .then(|| ())
