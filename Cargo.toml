@@ -13,5 +13,8 @@ homepage = "https://github.com/pedrodesu/yew-feather"
 documentation = "https://github.com/pedrodesu/yew-feather"
 include = ["/src/"]
 
+[lib]
+path = "src/lib.rs"
+
 [dependencies]
 yew = { git = "https://github.com/yewstack/yew" }
