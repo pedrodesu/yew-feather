@@ -1,8 +1,10 @@
-import { writeFile, readFile } from 'fs/promises';
+import { writeFile, readFile, mkdir } from 'fs/promises';
 import { join } from 'path';
 import { icons } from 'feather-icons';
 
 (async () => {
+    const outDir = join(process.env['OUT_DIR'], 'feather-src');
+
     const reservedKeywords = ['box', 'move', 'type'];
 
     const sanitize = (string) => (reservedKeywords.includes(string) ? `r#${string}` : string);
@@ -18,17 +20,23 @@ import { icons } from 'feather-icons';
 
     const underscore = (string) => string.replaceAll('-', '_');
 
-    const modify = (string) => `pub mod ${sanitize(underscore(string))};\n`;
+    const modify = (k) => `
+    #[path = concat!(env!("OUT_DIR"), "/feather-src/${underscore(k)}.rs")]
+    pub mod ${sanitize(underscore(k))};
+    `;
 
     const mod = Object.keys(icons).map(modify).join('');
 
-    const exportContent = `#![recursion_limit = "1024"]\n\n${mod}`;
+    await mkdir(outDir, { recursive: true });
 
-    await writeFile(join('src', 'lib.rs'), exportContent);
+    await writeFile(join(outDir, 'lib.rs'), mod);
 
     await Promise.all(
         Object.entries(icons).map(([k, { contents }]) =>
-            writeFile(join('src', `${underscore(k)}.rs`), slug(toPascal(k), contents))
+            writeFile(join(outDir, `${underscore(k)}.rs`), slug(toPascal(k), contents))
         )
     );
-})().catch(console.error);
+})().catch((err) => {
+    console.error(err);
+    process.exit(1);
+});
