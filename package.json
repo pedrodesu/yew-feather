@@ -11,11 +11,8 @@
     "author": "Pedro Ferreira <me.pedro.ferreira@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "build": "concurrently -m 1 -n clean,bootstrap,generate \"node .\""
     },
     "devDependencies": {
-        "concurrently": "^5.3.0",
-        "feather-icons": "^4.28.0",
-        "node": ">= 16"
+        "feather-icons": "^4.28.0"
     }
 }
