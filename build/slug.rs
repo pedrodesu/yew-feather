@@ -1,27 +1,8 @@
 use yew::prelude::*;
+pub use crate::IconProps as Props;
 
-pub struct [name]
-{
-}
-
-#[derive(Properties, Debug, Clone, PartialEq)]
-pub struct Props
-{
-    #[prop_or_default]
-    pub class: Option<&'static str>,
-    #[prop_or_default]
-    pub size: Option<i64>,
-    #[prop_or_default]
-    pub color: Option<&'static str>,
-    #[prop_or_default]
-    pub fill: Option<&'static str>,
-    #[prop_or_default]
-    pub stroke_width: Option<i64>,
-    #[prop_or_default]
-    pub stroke_linecap: Option<&'static str>,
-    #[prop_or_default]
-    pub stroke_linejoin: Option<&'static str>,
-}
+#[non_exhaustive]
+pub struct [name];
 
 impl Component for [name]
 {

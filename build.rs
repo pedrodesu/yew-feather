@@ -7,6 +7,7 @@ use std::process::Command;
 use std::{env, fs};
 
 const SLUG_FILE: &str = include_str!("build/slug.rs");
+const SLUG_LIB: &str = include_str!("build/lib_slug.rs");
 
 fn to_type_name(icon_name: &str) -> String
 {
@@ -17,7 +18,7 @@ fn to_mod_name(icon_name: &str) -> String
     let preliminary = icon_name.from_case(Case::Kebab).to_case(Case::Snake);
     format!("r#{}", preliminary)
 }
-fn to_mod_path(icon_name: &str) -> PathBuf
+fn _to_mod_path(icon_name: &str) -> PathBuf
 {
     PathBuf::from(format!("{}.rs", icon_name))
 }
@@ -46,30 +47,22 @@ fn main() -> Result<()>
     let output_dir = env::var("OUT_DIR").expect("an OUT_DIR be configured");
     let output_dir = PathBuf::from(output_dir).join("feather-src");
     fs::create_dir_all(&output_dir).expect("creating output subdir successful");
-    for (icon_name, icon_contents) in icons_json.iter()
-    {
-        let icon_path = to_mod_path(icon_name);
-        let icon_path = output_dir.join(icon_path);
+    let mut lib_content = String::from(SLUG_LIB);
+    lib_content.extend(icons_json.iter().map(|(icon_name, icon_contents)| {
         let icon_content = SLUG_FILE
             .replace("[name]", &to_type_name(icon_name))
             .replace("[markup]", icon_contents);
-        fs::write(icon_path, icon_content.as_bytes()).expect("can write to icon module file");
-    }
-    let lib_content: String = icons_json
-        .keys()
-        .map(|icon_name| {
-            let icon_path = to_mod_path(icon_name);
-            let module_name = to_mod_name(icon_name);
-            format!(
-                r#"
-#[path = "{icon_path}"]
-pub mod {module_name};
+        let module_name = to_mod_name(icon_name);
+        format!(
+            r#"
+pub mod {module_name} {{
+{icon_content}
+}}
 "#,
-                icon_path = icon_path.display(),
-                module_name = module_name
-            )
-        })
-        .collect();
+            module_name = module_name,
+            icon_content = icon_content
+        )
+    }));
     fs::write(output_dir.join("lib.rs"), lib_content.as_bytes()).expect("can write to lib.rs file");
     Ok(())
 }
