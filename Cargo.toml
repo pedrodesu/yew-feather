@@ -1,7 +1,7 @@
 [package]
 name = "yew-feather"
 version = "0.1.2"
-authors = ["Pedro Ferreira <me.pedro.ferreira@gmail.com>"]
+authors = ["Pedro Ferreira <me.pedro.ferreira@gmail.com>", "Martin Molzer <ga65guy@mytum.de>"]
 edition = "2018"
 categories = ["wasm", "web-programming"]
 keywords = ["wasm", "yew", "feather"]

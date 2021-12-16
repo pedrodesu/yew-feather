@@ -1,5 +1,5 @@
 [package]
-name = "yew-feater-example-usage"
+name = "yew-feather-example-usage"
 version = "0.0.1"
 authors = ["Pedro Ferreira <me.pedro.ferreira@gmail.com>", "Martin Molzer <ga65guy@mytum.de>"]
 license = "MIT"
