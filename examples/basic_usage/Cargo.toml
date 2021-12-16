@@ -1,0 +1,10 @@
+[package]
+name = "yew-feater-example-usage"
+version = "0.0.1"
+authors = ["Pedro Ferreira <me.pedro.ferreira@gmail.com>", "Martin Molzer <ga65guy@mytum.de>"]
+license = "MIT"
+edition = "2018"
+
+[dependencies]
+yew = "0.19.3"
+yew-feather = { path = "../../" }
