@@ -14,41 +14,35 @@ https://feathericons.com/
 ### Usage
 
 ```rust
-use wasm_bindgen::prelude::wasm_bindgen;
-use yew::prelude::{html, App, Component, ComponentLink, Html, ShouldRender};
+use yew::prelude::{html, Component, Context, Html};
 use yew_feather::camera::Camera;
 
 struct Model {}
 
-impl Component for Model {
+impl Component for Model
+{
     type Message = ();
     type Properties = ();
 
-    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
+    fn create(_: &Context<Self>) -> Self
+    {
         Self {}
     }
 
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
-        true
-    }
-
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, _: &Context<Self>) -> Html
+    {
         html! {
             <>
-                <span>Hello, world!</span>
+                <span>{"Hello, world!"}</span>
                 <Camera />
             </>
         }
     }
 }
 
-#[wasm_bindgen(start)]
-pub fn run_app() {
-    App::<Model>::new().mount_to_body();
+pub fn main()
+{
+    yew::start_app::<Model>();
 }
 ```
 
