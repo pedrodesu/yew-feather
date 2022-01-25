@@ -48,7 +48,6 @@ fn main() -> Result<()> {
     ]
     .concat();
 
-    fs::create_dir_all("src")?;
     fs::write("src/lib.rs", lib_content.as_bytes()).expect("can write to lib.rs file");
 
     Ok(())
