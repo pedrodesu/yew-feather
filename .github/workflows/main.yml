@@ -24,6 +24,9 @@ jobs:
           override: true
           profile: minimal
 
+      - name: Build release
+        run: cargo build --release
+
       - name: Publish
         uses: katyo/publish-crates@v1
         with:

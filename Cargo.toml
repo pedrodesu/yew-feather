@@ -1,6 +1,6 @@
 [package]
 name = "yew-feather"
-version = "0.2.0"
+version = "0.2.1"
 authors = [
     "Pedro Ferreira <me.pedro.ferreira@gmail.com>",
     "Martin Molzer <ga65guy@mytum.de>",
@@ -15,6 +15,9 @@ homepage = "https://github.com/pedrodesu/yew-feather"
 documentation = "https://github.com/pedrodesu/yew-feather"
 edition = "2021"
 include = ["/src"]
+
+[lib]
+path = "src/lib.rs"
 
 [dependencies]
 yew = "0.19.3"
