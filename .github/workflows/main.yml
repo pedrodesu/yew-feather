@@ -23,6 +23,7 @@ jobs:
           override: true
           profile: minimal
 
-      - run: cargo publish
-        env:
-          CARGO_REGISTRY_TOKEN: ${{ secrets.cargo_token }}
+      - name: Publish
+        uses: katyo/publish-crates@v1
+        with:
+          registry-token: ${{ secrets.cargo_token }}
