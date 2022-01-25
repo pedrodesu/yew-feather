@@ -1,0 +1,13 @@
+[package]
+name = "basic-usage"
+version = "0.1.0"
+authors = [
+    "Pedro Ferreira <me.pedro.ferreira@gmail.com>",
+    "Martin Molzer <ga65guy@mytum.de>",
+]
+license = "MIT"
+edition = "2021"
+
+[dependencies]
+yew = "0.19.3"
+yew-feather = { path = "../../" }
