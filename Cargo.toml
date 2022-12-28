@@ -20,7 +20,7 @@ include = ["/src"]
 path = "src/lib.rs"
 
 [dependencies]
-yew = "0.19.3"
+yew = "0.20"
 
 [build-dependencies]
 serde_json = "1.0.78"

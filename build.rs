@@ -24,11 +24,15 @@ fn main() -> Result<()> {
     .then(|| ())
     .ok_or_else(|| Error::new(ErrorKind::Other, "failed to install npm dependencies"))?;
 
+    let icons_path: PathBuf = [
+        env::current_dir().unwrap().to_str().unwrap(),
+        "node_modules",
+        "feather-icons",
+        "dist",
+        "icons.json"
+    ].iter().collect();
     let collection: HashMap<String, String> =
-        serde_json::from_reader(File::open(PathBuf::from(format!(
-            "{}\\node_modules\\feather-icons\\dist\\icons.json",
-            env::current_dir().unwrap().to_str().unwrap()
-        )))?)?;
+        serde_json::from_reader(File::open(icons_path)?)?;
 
     let lib_content = [
         LIB_SLUG.to_owned(),
