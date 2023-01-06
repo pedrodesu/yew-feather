@@ -21,18 +21,11 @@ fn get_package_manager() -> PathBuf {
 }
 
 fn main() -> Result<()> {
-    println!("cargo:rerun-if-changed=build/");
-    println!("cargo:rerun-if-changed=package-lock.json");
-
     Command::new(get_package_manager())
         .arg("install")
         .status()?;
 
-    let file = File::open(
-        ["node_modules", "feather-icons", "dist", "icons.json"]
-            .into_iter()
-            .fold(env::current_dir()?, |acc, path| acc.join(path)),
-    )?;
+    let file = File::open(env::current_dir()?.join("node_modules/feather-icons/dist/icons.json"))?;
 
     let collection: HashMap<String, String> = serde_json::from_reader(BufReader::new(file))?;
 
@@ -55,7 +48,8 @@ fn main() -> Result<()> {
     ]
     .concat();
 
-    fs::write("src/lib.rs", lib_content.as_bytes()).expect("can write to lib.rs file");
+    fs::create_dir_all("src").expect("could not generate src/lib.rs");
+    fs::write("src/lib.rs", lib_content.as_bytes()).expect("could not generate src/lib.rs");
 
     Ok(())
 }
