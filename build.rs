@@ -1,10 +1,11 @@
 use convert_case::{Case, Casing};
-use std::collections::HashMap;
-use std::fs::File;
-use std::io::{BufReader, Result};
-use std::path::PathBuf;
-use std::process::Command;
-use std::{env, fs};
+use std::{
+    collections::HashMap,
+    env, fs,
+    io::{BufReader, Result},
+    path::PathBuf,
+    process::Command,
+};
 use which::which;
 
 const LIB_SLUG: &str = include_str!("build/lib_slug.rs");
@@ -25,7 +26,8 @@ fn main() -> Result<()> {
         .arg("install")
         .status()?;
 
-    let file = File::open(env::current_dir()?.join("node_modules/feather-icons/dist/icons.json"))?;
+    let file =
+        fs::File::open(env::current_dir()?.join("node_modules/feather-icons/dist/icons.json"))?;
 
     let collection: HashMap<String, String> = serde_json::from_reader(BufReader::new(file))?;
 

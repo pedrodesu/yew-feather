@@ -1,6 +1,6 @@
 [package]
 name = "yew-feather"
-version = "0.2.1"
+version = "1.0.0"
 authors = [
     "Pedro Ferreira <me.pedro.ferreira@gmail.com>",
     "Martin Molzer <ga65guy@mytum.de>",
