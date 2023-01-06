@@ -1,19 +1,19 @@
-use yew::Properties;
+use yew::{function_component, html, AttrValue, Classes, Html, Properties};
 
 #[derive(Properties, PartialEq)]
 pub struct IconProps {
     #[prop_or_default]
-    pub class: &'static str,
-    #[prop_or("24")]
-    pub size: &'static str,
-    #[prop_or("none")]
-    pub fill: &'static str,
-    #[prop_or("currentColor")]
-    pub color: &'static str,
-    #[prop_or("2")]
-    pub stroke_width: &'static str,
-    #[prop_or("round")]
-    pub stroke_linecap: &'static str,
-    #[prop_or("round")]
-    pub stroke_linejoin: &'static str,
+    pub class: Classes,
+    #[prop_or(AttrValue::from("24"))]
+    pub size: AttrValue,
+    #[prop_or(AttrValue::from("none"))]
+    pub fill: AttrValue,
+    #[prop_or(AttrValue::from("currentColor"))]
+    pub color: AttrValue,
+    #[prop_or(AttrValue::from("2"))]
+    pub stroke_width: AttrValue,
+    #[prop_or(AttrValue::from("round"))]
+    pub stroke_linecap: AttrValue,
+    #[prop_or(AttrValue::from("round"))]
+    pub stroke_linejoin: AttrValue,
 }

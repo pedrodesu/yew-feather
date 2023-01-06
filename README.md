@@ -7,15 +7,15 @@
 
 yew-feather is a collection of simply beautiful open source icons for Yew. Each icon is designed on a 24x24 grid with an emphasis on simplicity, consistency and readability.
 
-#### Based on Feather Icons `v4.28.0`
+#### Based on Feather Icons `v4.29.0`
 
 https://feathericons.com/
 
 ### Usage
 
 ```rust
-use yew::{function_component, html};
-use yew_feather::camera::Camera;
+use yew::{function_component, html, Html};
+use yew_feather::Camera;
 
 #[function_component(App)]
 fn app() -> Html {
@@ -30,5 +30,5 @@ fn main() {
 Icons can be configured with inline props:
 
 ```rust
-<Camera color="red" size=48 />
+<Camera color="red" size="48" />
 ```

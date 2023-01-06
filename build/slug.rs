@@ -1,10 +1,6 @@
-use yew::{function_component, html};
-
-use crate::IconProps;
-
 #[function_component(__ComponentName)]
 pub fn __component_func(
-    &IconProps {
+    IconProps {
         class,
         size,
         fill,
@@ -16,8 +12,8 @@ pub fn __component_func(
 ) -> Html {
     html! {
         <svg
-            {class}
-            width={size}
+            class={class.clone()}
+            width={size.clone()}
             height={size}
             viewBox="0 0 24 24"
             {fill}

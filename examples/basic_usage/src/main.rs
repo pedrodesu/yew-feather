@@ -1,5 +1,5 @@
-use yew::{function_component, html};
-use yew_feather::camera::Camera;
+use yew::{function_component, html, Html};
+use yew_feather::Camera;
 
 #[function_component(App)]
 fn app() -> Html {

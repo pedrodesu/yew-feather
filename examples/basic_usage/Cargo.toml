@@ -9,5 +9,5 @@ license = "MIT"
 edition = "2021"
 
 [dependencies]
-yew = "0.19.3"
+yew = "0.20.0"
 yew-feather = { path = "../../" }
