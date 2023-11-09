@@ -20,7 +20,7 @@ include = ["/src"]
 path = "src/lib.rs"
 
 [dependencies]
-yew = "0.20.0"
+yew = "0.21.0"
 
 [build-dependencies]
 which = "4.3.0"
